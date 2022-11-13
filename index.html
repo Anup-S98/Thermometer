@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: FontAwesome !important;
+            background-color: rgb(153, 125, 139);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .outer-div {
+            /* display: flex;
+            align-items: center; */
+        }
+
+        h1 {
+            font-size: 4rem;
+        }
+
+        h1>span {
+            font-size: 6rem;
+        }
+    </style>
+    <script src="https://kit.fontawesome.com/1929d19c11.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="outer-div">
+        <div class="inner-div">
+            <h1>Thermometor <span id="icon"></span></h1>
+        </div>
+    </div>
+
+    <script>
+        const thermoIcon = document.getElementById('icon');
+        thermoIcon.innerHTML = "&#xf2cb;" ;
+        thermoIcon.style.color= "green" ;
+        const thermo = () => {
+
+            setTimeout(() => {
+                thermoIcon.innerHTML = "&#xf2cb;" ;
+                thermoIcon.style.color= "green" ;
+            }, 1000);
+
+            setTimeout(() => {
+                thermoIcon.innerHTML = "&#xf2ca;" ;
+                thermoIcon.style.color= "yellow" ;
+            }, 2000);
+
+            setTimeout(() => {
+                thermoIcon.innerHTML = "&#xf2c9;" ;
+                thermoIcon.style.color= "orange" ;
+            }, 3000);
+
+            setTimeout(() => {
+                thermoIcon.innerHTML = "&#xf2c7;" ;
+                thermoIcon.style.color= "red" ;
+            }, 4000);
+        }
+        thermo();
+        setInterval(thermo,5000);
+    </script>
+</body>
+
+</html>
